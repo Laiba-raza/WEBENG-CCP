@@ -1,0 +1,179 @@
+.note-editor-container {
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 25px;
+  background-color: #f5efe0;
+  border: 1px solid #d1b89e;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.note-editor-container h2 {
+  text-align: center;
+  color: #8b5e3c;
+  font-size: 1.8rem;
+}
+
+button[type="submit"] {
+  background-color: #8b5e3c;
+}
+
+button[type="submit"]:hover {
+  background-color: #6e482b;
+}
+
+/* Speech to text controls */
+.speech-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.speech-button {
+  padding: 8px 15px;
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.speech-button:hover {
+  background-color: #6e482b;
+}
+
+.speech-button:before {
+  content: "🎤";
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.speech-status {
+  margin-left: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Active listening state */
+.speech-button.listening {
+  background-color: #e74c3c;
+  animation: pulse 1.5s infinite;
+}
+
+.speech-button.listening:hover {
+  background-color: #c0392b;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+/* Privacy Toggle Switch Styles */
+.privacy-toggle-container {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.privacy-toggle-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.privacy-toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.privacy-toggle-slider {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+  margin-right: 10px;
+}
+
+.privacy-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.privacy-toggle-input:checked + .privacy-toggle-slider {
+  background-color: #8b5e3c;
+}
+
+.privacy-toggle-input:focus + .privacy-toggle-slider {
+  box-shadow: 0 0 1px #8b5e3c;
+}
+
+.privacy-toggle-input:checked + .privacy-toggle-slider:before {
+  transform: translateX(26px);
+}
+
+.privacy-toggle-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Add Lock/Unlock icon to toggle */
+.privacy-toggle-slider:after {
+  content: "🔓";
+  position: absolute;
+  right: 6px;
+  top: 1px;
+  font-size: 14px;
+}
+
+.privacy-toggle-input:checked + .privacy-toggle-slider:after {
+  content: "🔒";
+  left: 6px;
+  right: auto;
+}

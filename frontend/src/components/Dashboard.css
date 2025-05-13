@@ -1,0 +1,780 @@
+/* Dashboard.css */
+
+.dashboard {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5efe0; /* Light beige */
+  border: 1px solid #d1b89e; /* Soft brown */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.dashboard h2 {
+  text-align: center;
+  color: #8b5e3c; /* Dark brown */
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.logout-container {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.logout-button {
+  background-color: #fff;
+  color: #8b5e3c;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}
+
+.logout-button:hover {
+  background-color: #d1b89e;
+}
+
+.create-note-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #8b5e3c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.note-item {
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #d1b89e;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.note-item h3 {
+  color: #8b5e3c;
+}
+
+.note-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.note-buttons button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+  text-align: center;
+}
+
+.note-buttons button:hover {
+  background-color: #6e482b;
+}
+
+@media (max-width: 480px) {
+  .logout-button,
+  .create-note-button {
+    width: 100%;
+  }
+}
+/* Dashboard.css */
+
+.delete-confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.delete-confirmation-modal p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+  background-color: #f0f0f0;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+.search-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #d1b89e;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.3);
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.spinner {
+  border: 4px solid rgba(139, 94, 60, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #8b5e3c;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-notes-message {
+  text-align: center;
+  color: #8b5e3c;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Dashboard.css */
+
+.dashboard {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5efe0; /* Light beige */
+  border: 1px solid #d1b89e; /* Soft brown */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.dashboard h2 {
+  text-align: center;
+  color: #8b5e3c; /* Dark brown */
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.logout-container {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.logout-button {
+  background-color: #fff;
+  color: #8b5e3c;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}
+
+.logout-button:hover {
+  background-color: #d1b89e;
+}
+
+.create-note-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #8b5e3c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.note-item {
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #d1b89e;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.note-item h3 {
+  color: #8b5e3c;
+}
+
+.note-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.note-buttons button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+  text-align: center;
+}
+
+.note-buttons button:hover {
+  background-color: #6e482b;
+}
+
+/* Modal overlay for both password and delete confirmations */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.delete-confirmation-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.delete-confirmation-modal p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+  background-color: #8b5e3c;
+  color: white;
+}
+
+.modal-buttons button:hover {
+  background-color: #6e482b;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+.search-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #d1b89e;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.3);
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.spinner {
+  border: 4px solid rgba(139, 94, 60, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #8b5e3c;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-notes-message {
+  text-align: center;
+  color: #8b5e3c;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .logout-button,
+  .create-note-button {
+    width: 100%;
+  }
+}
+
+/* Styles for locked notes */
+.locked-note {
+  position: relative;
+  background-color: #faf7f2;
+}
+
+.locked-content {
+  background-color: rgba(139, 94, 60, 0.05);
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.locked-content:hover {
+  background-color: rgba(139, 94, 60, 0.1);
+}
+
+.locked-content p {
+  margin: 0;
+  color: #8b5e3c;
+  font-style: italic;
+}
+
+.lock-icon {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Password modal */
+.password-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+}
+
+.password-modal h3 {
+  color: #8b5e3c;
+  margin-top: 0;
+  text-align: center;
+}
+
+.password-modal p {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.password-modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d1b89e;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.password-modal input:focus {
+  outline: none;
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.3);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lock-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.3s;
+}
+
+.lock-toggle:hover {
+  transform: scale(1.2);
+}
+
+.lock-toggle.locked {
+  color: #8b5e3c;
+}
+
+.lock-toggle.unlocked {
+  color: #4caf50;
+}
+
+/* Styles for locked notes - updated */
+.locked-note {
+  position: relative;
+  background-color: #f8f4ed;
+  border: 1px solid #d1b89e;
+  transition: all 0.3s ease;
+}
+
+.locked-note:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 94, 60, 0.2);
+}
+
+.locked-note h3 {
+  filter: blur(4px);
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+.locked-content {
+  background-color: rgba(139, 94, 60, 0.05);
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.locked-content:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.locked-content:hover:before {
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.locked-content p {
+  margin: 0;
+  color: #8b5e3c;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.lock-icon {
+  font-size: 28px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.locked-content:hover .lock-icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.unlock-button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  margin-top: 12px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.unlock-button:hover {
+  background-color: #6e482b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.unlock-button-icon {
+  font-size: 14px;
+}
+
+/* Password modal - updated */
+.password-modal {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  max-width: 90vw;
+}
+
+.password-modal h3 {
+  color: #8b5e3c;
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.password-modal p {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.password-modal input {
+  width: calc(100% - 20px); /* Fixed overflow issue */
+  padding: 12px 10px;
+  margin-bottom: 20px;
+  border: 1px solid #d1b89e;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.password-modal input:focus {
+  outline: none;
+  border-color: #8b5e3c;
+  box-shadow: 0 0 8px rgba(139, 94, 60, 0.3);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.3s;
+  min-width: 100px;
+}
+
+.modal-buttons button:first-child {
+  background-color: #8b5e3c;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background-color: #f0e9df;
+  color: #8b5e3c;
+}
+
+.modal-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: #6e482b;
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #e5dbca;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lock-toggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.3s, color 0.3s;
+  z-index: 3;
+  position: relative;
+}
+
+.lock-toggle:hover {
+  transform: scale(1.2);
+}
+
+.lock-toggle.locked {
+  color: #8b5e3c;
+}
+
+.lock-toggle.unlocked {
+  color: #4caf50;
+}
+
+/* Make the button spinner look better */
+.button-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+/* Add a blur placeholder in locked notes */
+.blur-placeholder {
+  height: 80px;
+  background-color: #f8f4ed;
+  border-radius: 6px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.blur-line {
+  height: 12px;
+  background-color: rgba(139, 94, 60, 0.1);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  width: 90%;
+  filter: blur(2px);
+}
+
+.blur-line:nth-child(2) {
+  width: 75%;
+}
+
+.blur-line:nth-child(3) {
+  width: 85%;
+}
